@@ -1,3 +1,9 @@
+
+# These Bazel prereqs aren't needed because the CircleCI image already includes them.
+choco install nodejs --version 10.16.0 --no-progress
+choco install yarn --version 1.16.0 --no-progress
+choco install vcredist2015 --version 14.0.24215.20170201
+
 # Install Bazel pre-reqs on Windows
 # https://docs.bazel.build/versions/master/install-windows.html
 # https://docs.bazel.build/versions/master/windows.html
@@ -27,16 +33,11 @@ Add-Content $profile $bazelVersionGlobalVar
 git config --global --unset url.ssh://git@github.com.insteadOf
 
 # Print node and yarn versions.
-echo "Node version:"
-node -v
-echo "Yarn version:"
-yarn -v
+# echo "Node version:"
+# node -v
+# echo "Yarn version:"
+# yarn -v
 
-
-# These Bazel prereqs aren't needed because the CircleCI image already includes them.
-# choco install nodejs --version 10.16.0 --no-progress
-# choco install yarn --version 1.16.0 --no-progress
-# choco install vcredist2015 --version 14.0.24215.20170201
 
 # We don't need VS Build Tools for the tested bazel targets.
 # If it's needed again, uncomment these lines.
